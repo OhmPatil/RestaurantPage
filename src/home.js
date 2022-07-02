@@ -1,7 +1,7 @@
 import { loadFooter } from "./footer";
 import { loadHeader } from "./header";
 
-const homepage = function(){
+const loadHomepage = function(){
     console.log('home loaded');
 
     let contentContainer = document.getElementById("content");
@@ -9,6 +9,7 @@ const homepage = function(){
 
     loadHeader();
 
+    // Actual page content
     let mainContainer = document.createElement('div') 
     mainContainer.id = 'main-container'
 
@@ -29,9 +30,9 @@ const homepage = function(){
     mainContainer.appendChild(home_img)
     mainContainer.appendChild(home_subtext)
     contentContainer.appendChild(mainContainer)
+    // End of actual page content
 
-    
     loadFooter()
 }
 
-export { homepage }
+export { loadHomepage }

@@ -1,7 +1,13 @@
 import { initialPageLoad } from "./initial-page-load";
-import { homepage } from "./home";
+import { loadHomepage } from "./home";
+import { loadMenu } from "./menu";
+import { loadContact } from "./contact";
 
 initialPageLoad();
-// homepage();
+// loadHomepage();
+// loadMenu();
+loadContact();
 
-document.getElementById('home-item').addEventListener('click', homepage);
+document.getElementById("home-item").addEventListener("click", loadHomepage);
+document.getElementById("menu-item").addEventListener("click", loadMenu);
+document.getElementById("contact-item").addEventListener("click", loadContact);
