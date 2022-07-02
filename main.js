@@ -101,14 +101,14 @@ const loadHeader = function(){
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "homepage": () => (/* binding */ homepage)
+/* harmony export */   "loadHomepage": () => (/* binding */ loadHomepage)
 /* harmony export */ });
 /* harmony import */ var _footer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 /* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
 
 
 
-const homepage = function(){
+const loadHomepage = function(){
     console.log('home loaded');
 
     let contentContainer = document.getElementById("content");
@@ -116,6 +116,7 @@ const homepage = function(){
 
     (0,_header__WEBPACK_IMPORTED_MODULE_1__.loadHeader)();
 
+    // Actual page content
     let mainContainer = document.createElement('div') 
     mainContainer.id = 'main-container'
 
@@ -136,9 +137,124 @@ const homepage = function(){
     mainContainer.appendChild(home_img)
     mainContainer.appendChild(home_subtext)
     contentContainer.appendChild(mainContainer)
+    // End of actual page content
 
-    
     ;(0,_footer__WEBPACK_IMPORTED_MODULE_0__.loadFooter)()
+}
+
+
+
+/***/ }),
+/* 5 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "loadMenu": () => (/* binding */ loadMenu)
+/* harmony export */ });
+/* harmony import */ var _footer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
+
+
+
+const loadMenu = function(){
+    console.log('menu loaded');
+
+    let contentContainer = document.getElementById("content");
+    contentContainer.replaceChildren();
+
+    (0,_header__WEBPACK_IMPORTED_MODULE_1__.loadHeader)();
+
+    // Actual page content
+
+    let menuContainer = document.createElement('div');
+    menuContainer.id = 'menu-container';
+    
+    // End of actual page content
+
+    contentContainer.appendChild(menuContainer);
+    (0,_footer__WEBPACK_IMPORTED_MODULE_0__.loadFooter) ();
+}
+
+
+
+/***/ }),
+/* 6 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "loadContact": () => (/* binding */ loadContact)
+/* harmony export */ });
+/* harmony import */ var _footer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
+
+
+
+const loadContact = function(){
+    console.log('contact loaded');
+
+    let contentContainer = document.getElementById("content");
+    contentContainer.replaceChildren();
+
+    (0,_header__WEBPACK_IMPORTED_MODULE_1__.loadHeader)();
+
+    // Actual page content
+    let contactContainer = document.createElement('div');
+    contactContainer.id = 'contact-container';
+
+    let contact_text = document.createElement('h1');
+    contact_text.id = 'contact-text';
+    contact_text.textContent = 'Contact Us';
+
+    let contact_subtext = document.createElement('h2');
+    contact_subtext.id = 'contact-subtext';
+    contact_subtext.textContent = 'Feel free to contact us!';
+
+    let contact_phone = document.createElement('p');
+    contact_phone.id = 'contact-phoneaddress';
+    contact_phone.textContent = '📞: +1-555-555-5555';
+
+    let contact_address = document.createElement('p');
+    contact_address.id = 'contact-phoneaddress';
+    contact_address.textContent = '🏠: 123 Main St, New York, NY 10001';
+
+    let contact_form = document.createElement('form');
+    contact_form.id = 'contact-form';
+
+    let contact_form_name = document.createElement('input');
+    contact_form_name.id = 'contact-form-name';
+    contact_form_name.type = 'text';
+    contact_form_name.placeholder = 'Name';
+
+    let contact_form_email = document.createElement('input');
+    contact_form_email.id = 'contact-form-email';
+    contact_form_email.type = 'email';
+    contact_form_email.placeholder = 'Email';
+
+    let contact_form_message = document.createElement('textarea');
+    contact_form_message.id = 'contact-form-message';
+    contact_form_message.placeholder = 'Message';
+
+    let contact_form_submit = document.createElement('input');
+    contact_form_submit.id = 'contact-form-submit';
+    contact_form_submit.type = 'submit';
+    contact_form_submit.value = 'Submit';
+
+    contact_form.appendChild(contact_form_name);
+    contact_form.appendChild(contact_form_email);
+    contact_form.appendChild(contact_form_message);
+    contact_form.appendChild(contact_form_submit);
+
+    contactContainer.appendChild(contact_text);
+    contactContainer.appendChild(contact_subtext);
+    contactContainer.appendChild(contact_phone);
+    contactContainer.appendChild(contact_address);
+    contactContainer.appendChild(contact_form);
+    // End of actual page content
+
+    contentContainer.appendChild(contactContainer);
+    (0,_footer__WEBPACK_IMPORTED_MODULE_0__.loadFooter)();
 }
 
 
@@ -206,13 +322,22 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _initial_page_load__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
+/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5);
+/* harmony import */ var _contact__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6);
+
+
 
 
 
 (0,_initial_page_load__WEBPACK_IMPORTED_MODULE_0__.initialPageLoad)();
-// homepage();
+// loadHomepage();
+// loadMenu();
+(0,_contact__WEBPACK_IMPORTED_MODULE_3__.loadContact)();
 
-document.getElementById('home-item').addEventListener('click', _home__WEBPACK_IMPORTED_MODULE_1__.homepage);
+document.getElementById("home-item").addEventListener("click", _home__WEBPACK_IMPORTED_MODULE_1__.loadHomepage);
+document.getElementById("menu-item").addEventListener("click", _menu__WEBPACK_IMPORTED_MODULE_2__.loadMenu);
+document.getElementById("contact-item").addEventListener("click", _contact__WEBPACK_IMPORTED_MODULE_3__.loadContact);
+
 })();
 
 /******/ })()
