@@ -42,7 +42,7 @@ body{
 #nav{
     display: flex;
     /* border: 2px solid red; */
-    width: 40%;
+    width: 55%;
     justify-content: center;
     padding-bottom: 10px;
 }
