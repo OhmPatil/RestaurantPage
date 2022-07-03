@@ -21,15 +21,12 @@ const loadMenu = function(){
     let menuItem5 = createMenuItem('Pizza', 'Tomato, cheese, pepperoni, olives', 'pasta.jpg');
     let menuItem6 = createMenuItem('Pizza', 'Tomato, cheese, pepperoni, olives', 'pasta.jpg');
 
-
-
     menuContainer.appendChild(menuItem1);
     menuContainer.appendChild(menuItem2);
     menuContainer.appendChild(menuItem3);
     menuContainer.appendChild(menuItem4);
     menuContainer.appendChild(menuItem5);
     menuContainer.appendChild(menuItem6);
-    
     // End of actual page content
 
     contentContainer.appendChild(menuContainer);

@@ -4,11 +4,22 @@ import { loadMenu } from "./menu";
 import { loadContact } from "./contact";
 
 initialPageLoad();
-// loadHomepage();
-loadMenu();
-// loadContact();
+loadHomepage();
 
+const tabSwitcher = function(){
+    document.getElementById("home-item").addEventListener("click", function(){
+        loadHomepage();
+        tabSwitcher();
+    });
+    document.getElementById("menu-item").addEventListener("click", function(){
+        loadMenu();
+        tabSwitcher();
+    });
+    document.getElementById("contact-item").addEventListener("click", function(){
+        loadContact();
+        tabSwitcher();
+    });
+};
 
-document.getElementById("home-item").addEventListener("click", loadHomepage);
-document.getElementById("menu-item").addEventListener("click", loadMenu);
-document.getElementById("contact-item").addEventListener("click", loadContact);
+tabSwitcher();
+
