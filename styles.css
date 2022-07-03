@@ -142,7 +142,10 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+}
 
+.menu-item:hover{
+    cursor: pointer;
 }
 
 .menu-item-img{

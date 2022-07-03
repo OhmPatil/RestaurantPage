@@ -177,15 +177,12 @@ const loadMenu = function(){
     let menuItem5 = createMenuItem('Pizza', 'Tomato, cheese, pepperoni, olives', 'pasta.jpg');
     let menuItem6 = createMenuItem('Pizza', 'Tomato, cheese, pepperoni, olives', 'pasta.jpg');
 
-
-
     menuContainer.appendChild(menuItem1);
     menuContainer.appendChild(menuItem2);
     menuContainer.appendChild(menuItem3);
     menuContainer.appendChild(menuItem4);
     menuContainer.appendChild(menuItem5);
     menuContainer.appendChild(menuItem6);
-    
     // End of actual page content
 
     contentContainer.appendChild(menuContainer);
@@ -366,14 +363,25 @@ __webpack_require__.r(__webpack_exports__);
 
 
 (0,_initial_page_load__WEBPACK_IMPORTED_MODULE_0__.initialPageLoad)();
-// loadHomepage();
-(0,_menu__WEBPACK_IMPORTED_MODULE_2__.loadMenu)();
-// loadContact();
+(0,_home__WEBPACK_IMPORTED_MODULE_1__.loadHomepage)();
 
+const tabSwitcher = function(){
+    document.getElementById("home-item").addEventListener("click", function(){
+        (0,_home__WEBPACK_IMPORTED_MODULE_1__.loadHomepage)();
+        tabSwitcher();
+    });
+    document.getElementById("menu-item").addEventListener("click", function(){
+        (0,_menu__WEBPACK_IMPORTED_MODULE_2__.loadMenu)();
+        tabSwitcher();
+    });
+    document.getElementById("contact-item").addEventListener("click", function(){
+        (0,_contact__WEBPACK_IMPORTED_MODULE_3__.loadContact)();
+        tabSwitcher();
+    });
+};
 
-document.getElementById("home-item").addEventListener("click", _home__WEBPACK_IMPORTED_MODULE_1__.loadHomepage);
-document.getElementById("menu-item").addEventListener("click", _menu__WEBPACK_IMPORTED_MODULE_2__.loadMenu);
-document.getElementById("contact-item").addEventListener("click", _contact__WEBPACK_IMPORTED_MODULE_3__.loadContact);
+tabSwitcher();
+
 
 })();
 
