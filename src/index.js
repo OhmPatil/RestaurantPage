@@ -5,8 +5,9 @@ import { loadContact } from "./contact";
 
 initialPageLoad();
 // loadHomepage();
-// loadMenu();
-loadContact();
+loadMenu();
+// loadContact();
+
 
 document.getElementById("home-item").addEventListener("click", loadHomepage);
 document.getElementById("menu-item").addEventListener("click", loadMenu);
